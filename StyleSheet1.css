@@ -1,3 +1,49 @@
-﻿body
-{
+﻿header {
+    background-color: black;
+    padding: 1px;
+    text-align: center;
+    color:white;
 }
+
+
+nav {
+    overflow: hidden;
+    background-color: darkgray;
+  
+}
+
+    nav a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+main {
+    
+    padding: 1px;
+}
+    main .advert {
+        background-color: white;
+        padding: 1px;
+    }
+    main .roller {
+        background-color: black;
+        padding: 1px;
+    }
+
+footer {
+    background-color: black;
+    text-align: center;
+    padding: 10px;
+    color:white;
+}
+
+
