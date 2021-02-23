@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+<?PHP
+
+
+include('connect.php');
+
+$sql = "SELECT * from product";
+$result = mysqli_query($conn,$sql);
+
+if(isset($_POST['add'])){
+	print_r($_POST['id']);
+}
+
+
+?>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,35 +39,28 @@
 
     </nav>
 
-
-
-
-    <div class="flex_container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-
-    </div>
-
-    <div class="flex_container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-
-    </div>
-
-    <div class="flex_container">
-        <div>1</div>
-        <div>2</div>
-        <div>3</div>
-        <div>4</div>
-
-    </div>
-
-
-
+	
+	
+	<?php 
+	
+	while ($row = mysqli_fetch_array($result)){
+	
+	?>
+	
+	   <div class="flex_row">
+			<div class="flex_container">
+			 <div class="productimage">1</div>
+			<div class="productinfo"><?php echo $row['productname'];?>
+			<button name="add" >Add to cart</button></div>
+			<input type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
+			</div>
+		</div>
+	<?php
+	}
+	
+	?>
+	
+	
     <footer>
 
         <p>Contact us</p>

@@ -7,9 +7,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Accessories.html = Accessories.html
 		Clothing.html = Clothing.html
+		Clothing.php = Clothing.php
+		Connect.php = Connect.php
+		Favourites.php = Favourites.php
+		Header.html = Header.html
 		Home.html = Home.html
+		Login.php = Login.php
+		ShoppingCart.php = ShoppingCart.php
 		StyleSheet1.css = StyleSheet1.css
-		TextFile1.php = TextFile1.php
 	EndProjectSection
 EndProject
 Global

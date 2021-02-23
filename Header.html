@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <header>
+        <h6>Header</h6>
+    </header>
+
+    <nav>
+        <a href="home.html">Logo</a>
+        <a href="#">Sale</a>
+        <a href="#">New In</a>
+        <a href="Clothing.php">Clothes</a>
+        <a href="#">Shoes</a>
+        <a href="#">Accessories</a>
+        <a href="Favourites.php">Favourites</a>
+        <a href="ShoppingCart.php">Bag</a>
+
+        <i class="fa fa-shopping-basket"></i>
+        <?php
+
+        if(isset($_SESSION['cart'])){
+        $count=count($_SESSION['cart']);
+        echo"$count";
+
+        }
+        else{
+        echo"0";
+        }
+
+        ?>
+
+    </nav>
+</body>
+</html>
