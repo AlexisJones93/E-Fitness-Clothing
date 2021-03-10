@@ -4,10 +4,27 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <h6>Header</h6>
+
+        <?php
+
+        if(isset($_SESSION['cart'])){
+        $count=count($_SESSION['cart']);
+        echo"<a>$count</a>";
+
+        }
+        else{
+        echo"<a>0</a>";
+        }
+
+
+        ?>
+        <a href="ShoppingCart.php"><i class="fa fa-shopping-basket"></i></a>
+        <a href="Favourites.php"><i class="far fa-heart"></i></a>
+
     </header>
 
     <nav>
@@ -17,23 +34,8 @@
         <a href="Clothing.php">Clothes</a>
         <a href="#">Shoes</a>
         <a href="#">Accessories</a>
-        <a href="Favourites.php">Favourites</a>
-        <a href="ShoppingCart.php">Bag</a>
-
-        <i class="fa fa-shopping-basket"></i>
-        <?php
-
-        if(isset($_SESSION['cart'])){
-        $count=count($_SESSION['cart']);
-        echo"$count";
-
-        }
-        else{
-        echo"0";
-        }
-
-        ?>
-
+        
+        
     </nav>
 </body>
 </html>

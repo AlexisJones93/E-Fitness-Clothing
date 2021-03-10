@@ -1,15 +1,20 @@
 <?PHP
 
 
+session_start();
 include('connect.php');
 
-$sql = "SELECT * from product";
-$result = mysqli_query($conn,$sql);
-
-if(isset($_POST['add'])){
-	print_r($_POST['id']);
+if(isset($_POST['remove'])){
+  
+   foreach($_SESSION['cart'] as $key =>$value){
+   	   if($value['id'] == $_POST['id']){
+	   	   unset($_SESSION['cart'][$key]);
+		   echo"<script> alert('product removed')</script>";
+		   echo"<script>window.location=ShoppingCart.php</script>";
+	   }
+   }
+  
 }
-
 
 ?>
 <!DOCTYPE html>
@@ -24,41 +29,48 @@ if(isset($_POST['add'])){
 </head>
 <body>
 
-    <header>
-        <h6>Header</h6>
+    <?php include('Header.html');?>
 
-
-    </header>
-    <nav>
-        <a href="home.html">Logo</a>
-        <a href="#">Sale</a>
-        <a href="#">New In</a>
-        <a href="#">Clothes</a>
-        <a href="#">Shoes</a>
-        <a href="#">Accessories</a>
-
-    </nav>
-
+	<?php
 	
-	
-	<?php 
-	
-	while ($row = mysqli_fetch_array($result)){
-	
+	if(isset($_SESSION['cart'])){
+  
+	$item_array_id = array_column($_SESSION['cart'],'id');
+	print_r($item_array_id);
+    $sql = "SELECT * FROM product";
+	$fav = mysqli_query($conn,$sql);
+		
+	while ($row = mysqli_fetch_assoc($fav)){
+	 foreach($item_array_id as $id){
+			if($row['productID'] == $id){
+			
 	?>
 	
 	   <div class="flex_row">
+		 <form action="" method="post">
 			<div class="flex_container">
 			 <div class="productimage">1</div>
 			<div class="productinfo"><?php echo $row['productname'];?>
-			<button name="add" >Add to cart</button></div>
-			<input type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
+			<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
+			<button name="remove">Remove</button>
+			<button name="add">Add to cart</button></div>
 			</div>
+		 </form>
 		</div>
-	<?php
-	}
 	
-	?>
+	<?php
+
+  }
+  
+	}
+		}
+			
+			}
+			else {
+	            echo"You have no items in your basket ";
+             }
+
+			 ?>
 	
 	
     <footer>

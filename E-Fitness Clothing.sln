@@ -6,14 +6,16 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C654F8C4-C87E-463C-9443-4C11B0BB8F8D}"
 	ProjectSection(SolutionItems) = preProject
 		Accessories.html = Accessories.html
-		Clothing.html = Clothing.html
 		Clothing.php = Clothing.php
+		colour_buttons.php = colour_buttons.php
 		Connect.php = Connect.php
 		Favourites.php = Favourites.php
 		Header.html = Header.html
 		Home.html = Home.html
 		Login.php = Login.php
+		ProductView.php = ProductView.php
 		ShoppingCart.php = ShoppingCart.php
+		size_drop_down.php = size_drop_down.php
 		StyleSheet1.css = StyleSheet1.css
 	EndProjectSection
 EndProject

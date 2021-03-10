@@ -1,18 +1,42 @@
 <?PHP
 
-
-
 session_start();
 
 include('connect.php');
 
 
+
+
 $sql = "SELECT * from product";
 $result = mysqli_query($conn,$sql);
 
+if(isset($_POST['favourite'])){
+	if(isset($_SESSION['favourite'])){
+		$favourite_array = array_column($_SESSION['favourite'], 'id');
+		$_SESSION['id'] = $_POST['id'];
+		print_r($favourite_array);
+		if(in_array($_POST['id'], $favourite_array)){
+			echo"<script>alert('Item has already been favourited')</script>";
+		}
+		else{
+			$count = count($_SESSION['favourite']);
+		$fav_array = array ('id'=>$_POST['id']);
 
+		$_SESSION ['favourite'][$count]=$fav_array;
+		print_r($_SESSION['favourite']);
+		
+		}
+	}
+	else{
+	$fav_array = array('id'=>$_POST['id']);
 
+	//create new session variable.
+	$_SESSION['favourite'][0] = $fav_array;
+	//print_r($_SESSION['cart']);
+	}
+}
 
+//if add button is pressed.
 
 if(isset($_POST['add'])){
 
@@ -50,6 +74,8 @@ if(isset($_POST['add'])){
 	
 	if(isset($_POST['delete'])){
 	session_unset();
+
+	
 }
 
 
@@ -67,35 +93,45 @@ if(isset($_POST['add'])){
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 </head>
 <body>
-
-    
-    <?php include('Header.html');   ?>
-
-	<form action="" method="post">
+<form action="" method="post">
 	<button name="delete" >delete</button>
 	</form>
+    
+    <?php include('Header.html');   ?> 
+
+	
+	
+	
+	<div class="wrapper">
+		
 	<?php 
 	
 	while ($row = mysqli_fetch_array($result)){
 	
 	?>
 	
-	   <div class="flex_row">
+	   
 	   <form action="" method="post">
 			<div class="flex_container">
-			 <div class="productimage">1</div>
-			<div class="productinfo"><?php echo $row['productname'];?>
-			<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
-			<button name="add" >Add to cart</button></div>
+				 <div class="productimage">
+					 <img src="Img\BlackJoggers.jpg"></div>
+					 <div class="productinfo">
+					<?php echo"<a href=\"ProductView.php?id=$row[productname]\"> $row[productname]</a>"?>
+					<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input><br>
+					<button name="add" >Add to cart</button>
+					<button name="favourite"><i class="far fa-heart"></i></button>
+				</div>
 			</div>
 		</form>
-		</div>
+		
+
 	
 	<?php
 	}
 	
 	?>
-	
+	</div>
+
 	
     <footer>
 

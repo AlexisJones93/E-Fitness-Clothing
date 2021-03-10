@@ -2,28 +2,23 @@
 session_start();
 include('connect.php');
 
-
-
-if(isset($_SESSION['cart']))
-{
-	
-
-	//foreach($_SESSION['cart'] as $result){
-
-		//foreach ($result as $key => $value) 
-		//{
-			//echo $key."-".$value."<br />";
-		//}
-		
-		
-	//}
+//if the unfavourite button is pressed
+if(isset($_POST['unfav'])){
+// The for each item in the cart seperated to array key and value in array key.
+	foreach($_SESSION['favourite'] as $key => $value){
+	//if the value in the key equals the id that is in the post
+		if($value['id'] == $_POST['id']){
+		//Delete from the array based on the key
+			unset($_SESSION['favourite'][$key]);
+			//display message of removal.
+			echo"<script> alert('product removed')</script>";
+			//send back to the favourites page.
+		   echo"<script>window.location=Favourites.php</script>";
+		}
+	}
 }
-//else{
-   
-//}
- 
+
 	
-		
 
 ?>
 
@@ -45,16 +40,18 @@ if(isset($_SESSION['cart']))
   <?php  include('Header.html');  ?>
 
   <?php
-	if(isset($_SESSION['cart'])){
+  if(isset($_SESSION['favourite'])){
   
-	$item_array_id = array_column($_SESSION['cart'],'id');
+	$item_array_id = array_column($_SESSION['favourite'],'id');
+	print_r($item_array_id);
     $sql = "SELECT * FROM product";
 	$fav = mysqli_query($conn,$sql);
-		
-	while ($row = mysqli_fetch_assoc($fav)){
+	
+   while ($row = mysqli_fetch_assoc($fav)){
 	 foreach($item_array_id as $id){
 			if($row['productID'] == $id){
-			
+  
+		
 	?>
 	
 	   <div class="flex_row">
@@ -63,6 +60,7 @@ if(isset($_SESSION['cart']))
 			 <div class="productimage">1</div>
 			<div class="productinfo"><?php echo $row['productname'];?>
 			<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
+			<button class="unfav" name="unfav"><i class="far fa-heart"></i></button>
 			<button name="add" >Add to cart</button></div>
 			</div>
 		 </form>
@@ -74,13 +72,11 @@ if(isset($_SESSION['cart']))
   
 	}
 		}
-			}
-			else {
-	            echo"You have no saved items";
-             }
-
-		
-	
+		}
+		 else{
+ echo"<h7>No saved items</h7>";
+ }
+						
 	?>
 	
 	
