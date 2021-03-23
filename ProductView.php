@@ -9,6 +9,8 @@ $row =mysqli_fetch_assoc($result);
 
 
 
+
+
 include('Shopping_cart_array.php');
 
 
@@ -31,9 +33,6 @@ include('Shopping_cart_array.php');
 <?php include('Header.html');   ?> 
 
 <div class="wrapper">
-		<div class="flex_container">
-			<a href="ProductView.php"><img class="productview" src="Img\BlackJoggers.jpg"></a>
-        </div>
 		<div class="flex_container">
 			<a href="ProductView.php"><img class="productview" src="Img\BlackJoggers.jpg"></a>
         </div>

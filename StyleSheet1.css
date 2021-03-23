@@ -9,7 +9,7 @@
     justify-content: space-between;
     margin: 10px 60px 0 60px;
     flex-basis: 100px;
-   background-color:black;
+    background-color:black;
 }
 .space_holder_banner{
     width:400px;
@@ -42,7 +42,7 @@ header {
     header a {
         float: right;
         display: block;
-        color: white;
+        color: black;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
@@ -101,6 +101,7 @@ main {
     
     background-color: white;
     padding:15px 60px;
+    margin:20px;
 }
 
 
@@ -148,6 +149,11 @@ footer {
    
 }
 
+.fas, fa-user {
+    color: #ebd9c6;
+    font-size: 20px;
+}
+
 .unfav{
     background-color:red;
 }
@@ -182,6 +188,19 @@ footer {
     box-sizing: border-box;
 }
 
+    .btn_parent:focus {
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin: 5px;
+        box-sizing: border-box;
+    }
+
 .black_coloured_button {
     width: 100%;
     height: 100%;
@@ -190,14 +209,55 @@ footer {
     background-color: black;
     border: 0 solid green;
 }
-.pink_coloured_button {
+.white_coloured_button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    background-color: white;
+    
+}
+.mocha_coloured_button {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     padding: 10px;
-    background-color: pink;
+    background-color: #d9b38c;
+    border: 0 solid green;
+}
+.sage_coloured_button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #70db70;
+    border: 0 solid green;
+}
+.grey_coloured_button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+    background-color:grey;
+    border: 0 solid green;
+}
+.stone_coloured_button {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: #343442;
     border: 0 solid green;
 }
 .container_row{
     display:flex;
+}
+.productview{
+
+    height:500px;
+    width:400px;
+    margin-left: 150px;
+
+
 }

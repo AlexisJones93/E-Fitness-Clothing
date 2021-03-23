@@ -119,7 +119,7 @@ if(isset($_POST['add'])){
 					<?php echo"<a href=\"ProductView.php?id=$row[productname]\"> $row[productname]</a>"?>
 					<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input><br>
 					<button name="add" >Add to cart</button>
-					<button name="favourite"><i class="far fa-heart"></i></button>
+					<button ><i name="favourite" class="far fa-heart"></i></button>
 				</div>
 			</div>
 		</form>

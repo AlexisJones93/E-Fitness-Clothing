@@ -7,36 +7,37 @@
     <link rel="stylesheet" href="StyleSheet1.css" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>E-Fitness Clothing</title>
-	 <style type="text/css">
-        body{ font: 14px sans-serif; }
-
-        .loginwrapper{ 
-		max-width: 500px;
-        margin: auto;
-        background: white;
-        padding: 10px; 
-		background-color:lightgray;}
-    </style>
+	 
 </head>
 <body>
+
+<?php include('Header.html') ?>
+<?php include('LoginCheck.php')?>
+
 <div class="loginwrapper">
 <div class="container p-3 my-3">
 
-	<form>
+	<form action="" method="POST">
 	 <div class="form-group">
+	 <span class="warning"><?php if(isset($error)){echo $error;}?></span><br><br>
+	 <label>Sign in with email</label><br>
 	 <label for="email">Email Address:</label>
-	 <input type="email" class="form-control" placeholder="Enter email" id="email">
+	 <input type="email" class="form-control" placeholder="" name="email">
 	 </div>
 	 <div class="form-group">
 	 <label for="pwd">Password:</label>
-	 <input type="password" class="form-control" placeholder="Enter Password" id="pwd">
+	 <input type="password" class="form-control" placeholder="" name="pwd">
 	 </div>
-	 <button type="submit" class="btn btn-primary">Submit</button>
+	 <button type="submit" class="btn btn-primary" name="login">Login</button><br><br>
+	 <a href="">Forgotten Password?</a>
+	 <a href="Register.php">New here?</a>
 	</form>
 	</div>
 
 	</div>
 </body>
 <footer>
-</footer>
+
+        <p>Contact us</p>
+    </footer>
 </html>

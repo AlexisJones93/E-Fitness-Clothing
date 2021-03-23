@@ -14,7 +14,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Home.html = Home.html
 		Login.php = Login.php
 		ProductView.php = ProductView.php
+		Register.php = Register.php
+		Shopping_cart_array.php = Shopping_cart_array.php
 		ShoppingCart.php = ShoppingCart.php
+		signup.php = signup.php
 		size_drop_down.php = size_drop_down.php
 		StyleSheet1.css = StyleSheet1.css
 	EndProjectSection
