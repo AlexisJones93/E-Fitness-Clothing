@@ -214,10 +214,10 @@ if(isset($_POST['delete'])){
 				 </div>
 				  <div class="form-group">
 					<label for="Interest">Mostly Interested In:</label><br>
-					<input type="radio" name="radio" value="female">
-					<label for="female">WomensWear</label>
-					<input type="radio" name="radio"value="male">
-					<label for="male">MensWear</label>
+					<input type="radio" name="radio" value="workout">
+					<label for="workout">Workout</label>
+					<input type="radio" name="radio"value="running">
+					<label for="running">Running</label>
 				 </div>
 				 <button type="submit" class="btn btn-primary" name="newuser">Submit</button><br><br>
 				 <a href="Login.php">Already Registered?</a>

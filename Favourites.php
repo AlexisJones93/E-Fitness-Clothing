@@ -38,12 +38,12 @@ if(isset($_POST['unfav'])){
 
     
   <?php  include('Header.html');  ?>
-
+  <div class="wrapper">
   <?php
   if(isset($_SESSION['favourite'])){
   
 	$item_array_id = array_column($_SESSION['favourite'],'id');
-	print_r($item_array_id);
+	
     $sql = "SELECT * FROM product";
 	$fav = mysqli_query($conn,$sql);
 	
@@ -54,17 +54,17 @@ if(isset($_POST['unfav'])){
 		
 	?>
 	
-	   <div class="flex_row">
+	   
 		 <form action="" method="post">
 			<div class="flex_container">
 			 <div class="productimage">1</div>
-			<div class="productinfo"><?php echo $row['productname'];?>
+			<div class="productinfo"><?php echo $row['productname'];?><br>
 			<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
 			<button class="unfav" name="unfav"><i class="far fa-heart"></i></button>
 			<button name="add" >Add to cart</button></div>
 			</div>
 		 </form>
-		</div>
+		
 	
 	<?php
 
@@ -79,7 +79,7 @@ if(isset($_POST['unfav'])){
 						
 	?>
 	
-	
+	</div>
     <footer>
 
         <p>Contact us</p>

@@ -25,14 +25,14 @@ if(isset($_POST['add'])){
 		{
 			//else add item to cart.
 			$count = count($_SESSION['cart']);
-			$item_array = array ('productid'=> $rows['product_detail_ID']);
+			$item_array = array ('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size']);
 
 			$_SESSION ['cart'][$count]=$item_array;
 			print_r($_SESSION['cart']);
 		}
 	}
 	else{
-		$item_array = array('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size'], );
+		$item_array = array('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size'] );
 
 		//create new session variable.
 		$_SESSION['cart'][0] = $item_array;
@@ -40,7 +40,31 @@ if(isset($_POST['add'])){
 	}
 }
 
- 
+ if(isset($_POST['favourite'])){
+	if(isset($_SESSION['favourite'])){
+		$favourite_array = array_column($_SESSION['favourite'], 'id');
+		$_SESSION['id'] = $_POST['id'];
+		print_r($favourite_array);
+		if(in_array($_POST['id'], $favourite_array)){
+			echo"<script>alert('Item has already been favourited')</script>";
+		}
+		else{
+			$count = count($_SESSION['favourite']);
+		$fav_array = array ('id'=>$_POST['id']);
+
+		$_SESSION ['favourite'][$count]=$fav_array;
+		print_r($_SESSION['favourite']);
+		
+		}
+	}
+	else{
+	$fav_array = array('id'=>$_POST['id']);
+
+	//create new session variable.
+	$_SESSION['favourite'][0] = $fav_array;
+	//print_r($_SESSION['cart']);
+	}
+}
 
 
 ?>

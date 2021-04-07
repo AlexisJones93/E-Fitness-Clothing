@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 if(isset($_POST['login'])){
    include('Connect.php');
@@ -26,16 +28,17 @@ if(isset($_POST['login'])){
 		  
 		  
 		  if(password_verify($password, $hash)){
-		      header("Location:Clothing.php");
+			  $_SESSION['user'] = $email;
+		      header("Location:User_account.php");
+
+
 		  }
 		  else{
-		  	  echo"fail";
+		  	  $Error ="Password or email address are incorrect";
 		  }
 		  
 	  }
-	  else{
-		echo"didnt work";
-	  }
+	  
 	 }
 }
 

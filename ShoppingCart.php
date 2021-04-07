@@ -1,6 +1,4 @@
 <?PHP
-
-
 session_start();
 include('connect.php');
 
@@ -30,54 +28,17 @@ if(isset($_POST['remove'])){
 <body>
 
     <?php include('Header.html');?>
+	<div><p>My Bag</p></div>
 
-	<?php
-	
-	if(isset($_SESSION['cart'])){
-  
-	$item_array_id = array_column($_SESSION['cart'],'id');
-	print_r($item_array_id);
-    $sql = "SELECT * FROM product";
-	$fav = mysqli_query($conn,$sql);
-		
-	while ($row = mysqli_fetch_assoc($fav)){
-	 foreach($item_array_id as $id){
-			if($row['productID'] == $id){
-			
-	?>
-	
-	   <div class="flex_row">
-		 <form action="" method="post">
-			<div class="flex_container">
-			 <div class="productimage">1</div>
-			<div class="productinfo"><?php echo $row['productname'];?>
-			<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
-			<button name="remove">Remove</button>
-			<button name="add">Add to cart</button></div>
-			</div>
-		 </form>
-		</div>
-	
-	<?php
-
-  }
-  
-	}
-		}
-			
-			}
-			else {
-	            echo"You have no items in your basket ";
-             }
-
-			 ?>
-	
-	
-    <footer>
-
-        <p>Contact us</p>
-    </footer>
-
-
+	<div class="flex-grid">
+  <div class="col">This little piggy went to market.</div>
+  <div class="col">This little piggy stayed home.</div>
+  <div class="col">This little piggy had roast beef.</div>
+</div>
+<div class="flex-grid">
+  <div class="col">This little piggy went to market.</div>
+  <div class="col">This little piggy stayed home.</div>
+  <div class="col">This little piggy had roast beef.</div>
+</div>
 </body>
 </html>

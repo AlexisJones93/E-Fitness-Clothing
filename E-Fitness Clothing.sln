@@ -5,26 +5,44 @@ VisualStudioVersion = 15.0.28307.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C654F8C4-C87E-463C-9443-4C11B0BB8F8D}"
 	ProjectSection(SolutionItems) = preProject
-		Accessories.html = Accessories.html
+		Accessories.php = Accessories.php
+		bottoms.php = bottoms.php
 		Clothing.php = Clothing.php
 		colour_buttons.php = colour_buttons.php
 		Connect.php = Connect.php
 		Favourites.php = Favourites.php
 		Header.html = Header.html
-		Home.html = Home.html
+		Index.html = Index.html
 		Login.php = Login.php
+		LoginCheck.php = LoginCheck.php
 		ProductView.php = ProductView.php
 		Register.php = Register.php
+		shoes.php = shoes.php
 		Shopping_cart_array.php = Shopping_cart_array.php
 		ShoppingCart.php = ShoppingCart.php
 		signup.php = signup.php
 		size_drop_down.php = size_drop_down.php
+		spare.php = spare.php
 		StyleSheet1.css = StyleSheet1.css
+		tops.php = tops.php
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "my-account", "my-account", "{2BCFBC8C-132C-4F1C-979F-166E937ED65D}"
+	ProjectSection(SolutionItems) = preProject
+		Addresses.php = Addresses.php
+		changepassword.php = changepassword.php
+		details.php = details.php
+		editaddress.php = editaddress.php
+		newaddress.php = newaddress.php
+		User_account.php = User_account.php
 	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BCFBC8C-132C-4F1C-979F-166E937ED65D} = {C654F8C4-C87E-463C-9443-4C11B0BB8F8D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2F3F3797-9008-446E-ADCF-0890D0458CE9}

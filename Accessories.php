@@ -1,27 +1,15 @@
-<?PHP
-
+﻿<?php
 session_start();
-include('connect.php');
+include('Connect.php');
 
-
-
-
-$sql = "SELECT * from product";
+$sql = "SELECT * from product WHERE producttype = 'accessories'" ;
 $result = mysqli_query($conn,$sql);
 
 include('Shopping_cart_array.php');
 
-
-	
-	if(isset($_POST['delete'])){
-	session_unset();
-
-	
-}
-
-
-
 ?>
+
+
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">

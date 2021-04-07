@@ -35,11 +35,11 @@ if(isset($_POST['newuser'])){
 		$error = "Password does not match";
 	}
 
-	if($preference == "female"){
-		$interest='womenswear';
+	if($preference == "workout"){
+		$interest='workout';
 	}
 	else{
-		$interest='menswear';
+		$interest='running';
 		
 	}
 
