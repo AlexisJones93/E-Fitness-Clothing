@@ -40,6 +40,7 @@ include('Shopping_cart_array.php');
 			<form action="" method="post">
 				<div class="productdetails" name="name"><?php echo $row['productname'];?><br><div>
 				<hr>
+				<div class="productdetails" name="price"><?php echo "&pound" . $row['price'];?><br><div>
 					<input  name="id" type="hidden"value="<?php echo $row['productID'];?>"</input>
 				<p class="productdetails"> Colour</p>
 					<div class="container_row"><?php include('colour_buttons.php');?></div>

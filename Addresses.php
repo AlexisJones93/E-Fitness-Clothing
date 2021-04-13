@@ -60,7 +60,7 @@ if(isset($_POST['delete'])){
 				<div class="form-group">
 				<output><?php echo $rows['firstname']. '  ' .$rows['lastname'];?></output><br>
 				<output><?php echo $rows['address_firstline'];?></output><br>
-				<input name="addressID" value="<?php echo $rows['addressID'];?>"></input>
+				<input type ="hidden"name="addressID" value="<?php echo $rows['addressID'];?>"></input>
 				<output><?php echo $rows['address_secondline'];?></output><br>
 				<output><?php echo $rows['postcode'];?></output><br>
 				<output><?php echo $rows['city'];?></output><br>

@@ -14,6 +14,10 @@ if(isset($_POST['remove'])){
   
 }
 
+$sql = "SELECT * FROM addresses where deault = '1'";
+$result = mysqli_query($conn, $sql);
+
+$default = mysqli_fetch_assoc($result);
 
 
 ?>
@@ -34,8 +38,28 @@ if(isset($_POST['remove'])){
 	
 	<div class ="items" style="background-color:pink;"><p>My Bag</p></div>
 	<div class="flex-grid" style="background-color:black;">
-		<div class ="items" style="background-color:pink;">
-  
+	<div class="price" style="background-color:yellow;">
+		<form>
+			<h3> Delivery Adress</h3>
+			<hr>
+			<input  name="firstname" value= "<?php echo $default['firstname'];?>"</input>
+			<input  name="lastname" value= "<?php echo $default['lastname'];?>"</input>
+			<output  name="firstline" value= "<?php echo $row['product_detail_ID']; ?>"</input>
+
+
+
+			<input  name="secondline" value= "<?php echo $row['product_detail_ID'];?>"</input>
+			<input  name="city" value= "<?php echo $row['product_detail_ID'];?>"</input>
+			<input  name="county" value= "<?php echo $row['product_detail_ID'];?>"</input>
+			<input  name="postcode" value= "<?php echo $row['product_detail_ID'];?>"</input>
+			<input  name="county" value= "<?php echo $row['product_detail_ID'];?>"</input>
+			<hr>
+			<button class="button" name="checkout"><span>CHECKOUT</span></button>
+		</form>
+  </div>
+
+	<div class ="items" style="background-color:pink;">
+	<h3> SUMMARY </h3>
 			<?php
 			  $total = 0;
 				if(isset($_SESSION['cart'])){
@@ -57,10 +81,9 @@ if(isset($_POST['remove'])){
 								 <form action="" method="post">
 									
 									 <div class="productimage">1</div>
-									 <div class="productinfo"><?php echo "&pound" .$row['price'];?><br>
+									 <div class="productinfo"><?php echo "&pound" .$row['price'];?>
 									 <?php echo $row['productname'];?> <br></div>
-									 <input  type="hidden" name="id" value= "<?php echo $row['product_detail_ID'];?>"</input>
-									 <button class="btn btn-danger" name="unfav"><i class="far fa-heart"></i> Save for later</button>	
+									 <input  type="hidden" name="id" value= "<?php echo $row['product_detail_ID'];?>"</input>	
 									 <hr>
 								 </form>
 						 
@@ -80,15 +103,6 @@ if(isset($_POST['remove'])){
 			?>
 			<h5> Sub-Total:  <?php echo "&pound". $total;?> </h5>
 	</div>
-
-	<div class="price" style="background-color:yellow;">
-	<h3> TOTAL </h3>
-	<hr>
-	<h4> Sub-Total:  <?php echo "&pound". $total;?></h4>
-	<h5> Delivery:</h5>
-	<hr>
-	<button class="button" name="checkout"><span>CHECKOUT</span></button>
-  </div>
   </div>
 	</div>
 <div class="flex-grid">

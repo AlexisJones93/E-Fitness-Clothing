@@ -25,14 +25,14 @@ if(isset($_POST['add'])){
 		{
 			//else add item to cart.
 			$count = count($_SESSION['cart']);
-			$item_array = array ('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size']);
+			$item_array = array ('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size'],'price'=>$_POST['price']);
 
 			$_SESSION ['cart'][$count]=$item_array;
 			print_r($_SESSION['cart']);
 		}
 	}
 	else{
-		$item_array = array('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size'] );
+		$item_array = array('productid'=> $rows['product_detail_ID'],'id'=>$_POST['id'],'colour'=>$_POST['colour'],'size'=>$_POST['size'],'price'=>$_POST['price'] );
 
 		//create new session variable.
 		$_SESSION['cart'][0] = $item_array;
