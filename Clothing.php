@@ -15,8 +15,6 @@ include('Shopping_cart_array.php');
 	
 	if(isset($_POST['delete'])){
 	session_unset();
-
-	
 }
 
 
@@ -55,14 +53,16 @@ include('Shopping_cart_array.php');
 	   <form action="" method="post">
 			<div class="flex_container">
 				 <div class="productimage">
-					 <img src="Img\BlackJoggers.jpg"></div>
-					 <div class="productinfo">
-					<?php echo"<a href=\"ProductView.php?id=$row[productname]\"> $row[productname]</a>"?>
-					<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input><br>
-					<button name="favourite"><i class="far fa-heart"></i></button>
+					 <button class="heart-button" name="favourite"><i class="far fa-heart"></i></button>
+				 </div>
+				 <div class="productinfo">
+					<?php echo"<a href=\"ProductView.php?id=$row[productname]\"> $row[productname]</a>"?><br>
+					<?php echo"<a href=\"ProductView.php?id=$row[productname]\"> &pound$row[price]</a>"?>
+					<input  type="hidden" name="id" value= "<?php echo $row['productID'];?>"</input>
 				</div>
 			</div>
 		</form>
+
 		
 
 	

@@ -32,9 +32,9 @@ if(isset($_POST['remove'])){
 
     <?php include('Header.html');?>
 	
-	<div class ="items" style="background-color:pink;"><p>My Bag</p></div>
-	<div class="flex-grid" style="background-color:black;">
-		<div class ="items" style="background-color:pink;">
+	<h2 class="text-center">My Bag</h2>
+	<div class="flex-grid">
+		<div class ="items" style="background-color:lightgrey;">
   
 			<?php
 			  $total = 0;
@@ -56,11 +56,11 @@ if(isset($_POST['remove'])){
 	  
 								 <form action="" method="post">
 									
-									 <div class="productimage">1</div>
+									 
 									 <div class="productinfo"><?php echo "&pound" .$row['price'];?><br>
 									 <?php echo $row['productname'];?> <br></div>
 									 <input  type="hidden" name="id" value= "<?php echo $row['product_detail_ID'];?>"</input>
-									 <button class="btn btn-danger" name="unfav"><i class="far fa-heart"></i> Save for later</button>	
+									 <button type="button" class="btn btn-default float-right" name="unfav"> Save for later</button>	
 									 <hr>
 								 </form>
 						 
@@ -72,7 +72,7 @@ if(isset($_POST['remove'])){
 					}
 					else 
 					{
-						echo"You have no items in your basket ";
+						echo"<h4>You have no items in your basket</h4> ";
 					}
 
 		
@@ -81,7 +81,7 @@ if(isset($_POST['remove'])){
 			<h5> Sub-Total:  <?php echo "&pound". $total;?> </h5>
 	</div>
 
-	<div class="price" style="background-color:yellow;">
+	<div class="price" style="background-color:lightgrey;">
 	<h3> TOTAL </h3>
 	<hr>
 	<h4> Sub-Total:  <?php echo "&pound". $total;?></h4>
@@ -91,9 +91,6 @@ if(isset($_POST['remove'])){
   </div>
   </div>
 	</div>
-<div class="flex-grid">
-  <div class="items">This little piggy went to market.</div>
-  <div class="items">Total price</div>
-</div>
+
 </body>
 </html>

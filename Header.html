@@ -4,10 +4,15 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link rel="stylesheet" href="StyleSheet1.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
+    
     <header>
+
+
 
         <?php
 
@@ -25,23 +30,24 @@
         <a href="ShoppingCart.php"><i class="fa fa-shopping-basket"><?php echo" ". $placeholder?></i></a>
         <a href="Favourites.php"><i class="far fa-heart"></i></a>
         <a href="Login.php"><i class="fas fa-user"></i></a>
-        
+
+        <h2 class="text-center">E-Fitness Clothing</h2>
 
     </header>
 
-    <nav>
-        <a href="Index.html">Logo</a>
-        <a href="#">Sale</a>
-        <a href="#">New In</a>
-        <div class="dropdown">
-            <a href="Clothing.php">Clothes</a>
-            <div class="dropdown-content">
-                <a href="bottoms.php">Bottoms</a>
-                <a href="tops.php">Tops</a>
-            </div>
-        </div>
-        <a href="shoes.php">Shoes</a>
-        <a href="Accessories.php">Accessories</a>
-    </nav>
+    <ul class="nav nav-pills right">
+        <li><a href="Index.html">E-Fitness</a></li>
+        <li class="dropdown">
+            <a href="Clothing.php" class="dropdown-toggle">Clothing</a>
+            <ul class="dropdown-menu clearfix">
+                <li><a href="">New In</a></li>
+                <li><a href="bottoms.php">Bottoms</a></li>
+                <li><a href="tops.php">Tops</a></li>
+            </ul>
+        </li>
+        <li><a href="shoes.php">Shoes</a></li>
+        <li><a href="Accessories.php">Accessories</a></li>
+    </ul>
+    <hr>
 </body>
 </html>

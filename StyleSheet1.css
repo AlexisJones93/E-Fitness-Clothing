@@ -3,16 +3,24 @@
 
 body {
     font: 14px sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.test {
+    background-color: black;
+    font-size: 20px;
+    
 }
 
 .wrapper {
     display: inline-flex;
     flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 10px 60px 0 60px;
     flex-basis: 100px;
-    
+    padding: 0;
 }
 
 .button {
@@ -21,20 +29,20 @@ body {
     border: none;
     border-radius: 4px;
     padding: 10px 24px;
-    
 }
+
 button > span, p {
     display: flex;
     flex-direction: row;
     color: white;
     justify-content: center;
 }
- .flex-grid {
-   display: flex;
-   background-color: orchid;
-   margin:2% 4% 2% 4%;
-   justify-content:center;
-  }
+
+.flex-grid {
+    display: flex;
+    margin: 2% 4% 2% 4%;
+    justify-content: center;
+}
 
     .flex-grid .items {
         margin: 2% 0 0 8%;
@@ -44,6 +52,7 @@ button > span, p {
         flex-direction: column;
         align-self: flex-start;
     }
+
     .flex-grid .price {
         margin: 2% 0 0 2%;
         padding: 10px;
@@ -58,31 +67,30 @@ button > span, p {
         display: block;
         flex-direction: column;
     }
+
     .items {
-    width: 100%;
-    margin: 0 0 10px 0;
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
 }
 
-}
-
-.row{
-    justify-content:center;
+.row {
+    justify-content: center;
 }
 
 /*  End of body styling */
 
-.space_holder_banner{
-    width:400px;
-    height:200px;
-    background-color:lightgray;
+.space_holder_banner {
+    width: 400px;
+    height: 200px;
+    background-color: lightgray;
 }
 
-.img-home-banner{
-    width:1000px;
+.img-home-banner {
+    width: 1000px;
     height: 200px;
-    background-image:url(Img/sports.png);
-    background-size:100%;
-
+    background-image: url(Img/sports.png);
+    background-size: 100%;
 }
 
 .loginwrapper {
@@ -90,11 +98,9 @@ button > span, p {
     margin: auto;
     background: white;
     padding: 10px;
-    
 }
 
 header {
-
     overflow: hidden;
     background-color: white;
 }
@@ -104,79 +110,55 @@ header {
         display: block;
         color: black;
         text-align: center;
-        padding: 14px 16px;
+        padding: 9px;
         text-decoration: none;
     }
 
         header a:hover {
-         background-color: #ddd;
+            background-color: #ddd;
             color: black;
         }
 
-/* Nav bar styling below */
+/* ---------------------------------------------------------Nav bar styling below------------------------------------------------ */
 
-nav {
-   overflow: hidden;
-    background-color: #ebd9c6;
-    
+.nav {
+    background-color: white;
+    color: black;
+    margin: 5px 0px 0px 10px;
 }
 
-    nav a {
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+    .nav li a {
+        color: black;
+        font-size: 15px;
     }
 
-        nav a:hover {
-            background-color: white;
-            color: black;
-        }
-
-.dropdown {
-    float:left;
-   
-}
+    .nav a:hover {
+        background-color: lightgray;
+        color: black;
+    }
 
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
-}
-
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-            .dropdown-content a:hover {
-                background-color: #ddd;
-            }
-
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-menu {
     display: block;
-    
+    background-color: white;
+    color: black;
 }
 
-/* Nav bar styling above */
+.text-center {
+   
+    margin:0px 0px 0px 80px;
+}
+
+/* ---------------------------------------------------------         ------------------------------------------------ */
 
 main {
-    
     padding: 1px;
 }
+
     main .advert {
-        
         padding: 1px;
     }
+
     main .roller {
         background-color: black;
         padding: 1px;
@@ -187,43 +169,38 @@ main {
 .flex_container {
     display: inline-flex;
     flex-direction: column;
-    background-color:pink;
-    margin:15px;
-    
+    margin: 10px;
 }
 
 .flex_container_productdetails {
-    
     background-color: white;
-    padding:15px 60px;
-    margin:20px;
+    padding: 15px 60px;
+    margin: 20px;
 }
 
 
-    .flex_container > .productimage {
-        
-        flex-basis: 250px;
-        width: 200px;
-        height: 300px;
-        margin: 6px;
-        text-align: center;
-        line-height: 75px;
-    }
+.flex_container > .productimage {
+    flex-basis: 250px;
+    width: 200px;
+    height: 300px;
+    margin: 6px;
+    text-align: center;
+    position: relative;
+    background-color:lightgray;
+}
 
-    .flex_container > .productinfo {
-        background-color: lightgray;
-        width: 220px;
-        height: 80px;
-        margin: 10px;
-        text-align: center;
-        line-height:25px;
-        font-size: 10px;
-        
-    }
+.flex_container > .productinfo {
+    width: 220px;
+    height: 80px;
+    margin: 9px;
+    line-height: 35px;
+    font-size: 13px;
+}
 
-    .flex_container > .far, fa-heart {
-        position: absolute;
-    }
+.productinfo a {
+    color: darkslategrey;
+    text-decoration: none;
+}
 
 .flex_row {
     display: inline-flex;
@@ -237,31 +214,61 @@ footer {
     background-color: black;
     text-align: center;
     padding: 10px;
-    color:white;
+    color: white;
 }
 
 .fa, fa-shopping-basket {
-    color: #ebd9c6;
+    color: #0f0f0a;
+    font-size: 20px;
+}
+
+.heart-button {
+    border-radius: 15px;
+    border: none;
+    background-color: white;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+    .heart-button:hover {
+        border-radius: 15px;
+        border: none;
+        background-color: black;
+        position: absolute;
+        bottom: 20px;
+        right: -5px;
+
+    }
+
+.fa-heart:hover {
+    color: white;
     font-size: 20px;
 }
 
 .far, fa-heart {
-    color: #ebd9c6;
-    font-size:20px;
-   
+    color: white;
+    fill: white;
+    font-size: 20px;
+    margin-top: 25%;
 }
 
-.fas, fa-user {
-    color: #ebd9c6;
+.fa-heart {
+    color: #0f0f0a;
     font-size: 20px;
 }
 
-.unfav{
-    background-color:red;
+.fas, fa-user {
+    color: #0f0f0a;
+    font-size: 20px;
 }
 
-.productdetails{
-    font-size:30px;
+.unfav {
+    background-color: red;
+}
+
+.productdetails {
+    font-size: 30px;
 }
 
 .btn_parent {
@@ -273,22 +280,22 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    margin:5px;
-    box-sizing: border-box;
-}
-
-.btn_parent:hover{
-    width: 40px;
-    height: 40px;
-    border: 2px solid black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
     margin: 5px;
     box-sizing: border-box;
 }
+
+    .btn_parent:hover {
+        width: 40px;
+        height: 40px;
+        border: 2px solid black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5px;
+        margin: 5px;
+        box-sizing: border-box;
+    }
 
     .btn_parent:focus {
         width: 40px;
@@ -311,6 +318,7 @@ footer {
     background-color: black;
     border: 0 solid green;
 }
+
 .white_coloured_button {
     width: 100%;
     height: 100%;
@@ -318,8 +326,8 @@ footer {
     border: 1px solid lightgrey;
     padding: 10px;
     background-color: white;
-    
 }
+
 .mocha_coloured_button {
     width: 100%;
     height: 100%;
@@ -328,6 +336,7 @@ footer {
     background-color: #d9b38c;
     border: 0 solid green;
 }
+
 .sage_coloured_button {
     width: 100%;
     height: 100%;
@@ -336,14 +345,16 @@ footer {
     background-color: #70db70;
     border: 0 solid green;
 }
+
 .grey_coloured_button {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     padding: 10px;
-    background-color:grey;
+    background-color: grey;
     border: 0 solid green;
 }
+
 .stone_coloured_button {
     width: 100%;
     height: 100%;
@@ -352,17 +363,15 @@ footer {
     background-color: #343442;
     border: 0 solid green;
 }
-.container_row{
-    display:flex;
-    
+
+.container_row {
+    display: flex;
 }
-.productview{
 
-    height:500px;
-    width:400px;
+.productview {
+    height: 500px;
+    width: 400px;
     margin-left: 150px;
-
-
 }
 
 /*UserAccount Page */
@@ -373,16 +382,15 @@ footer {
 }
 
     .sidenav a {
-        
         display: block;
         color: white;
         text-align: center;
         padding: 14px 16px;
         text-decoration: none;
-        font-size:25px;
+        font-size: 25px;
     }
 
         .sidenav a:hover {
             background-color: white;
             color: black;
-        }
+        }  

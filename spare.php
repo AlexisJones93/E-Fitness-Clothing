@@ -1,3 +1,8 @@
+
+
+<!-- removed code -->
+
+
 if(isset($_POST['favourite'])){
 	if(isset($_SESSION['favourite'])){
 		$favourite_array = array_column($_SESSION['favourite'], 'id');
